@@ -1,0 +1,1 @@
+INSERT into profile(id,firstname,lastname) values (1,'Filip','Werra');

@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20191211_jpa
+      author: Filip Werra
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatments: false
+        path: 20191211_jpa.sql
+
+  - changeSet:
+      id: 20190611_user
+      author: Filip Werra
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatments: false
+        path: 20190611_user.sql
+
+
+
+

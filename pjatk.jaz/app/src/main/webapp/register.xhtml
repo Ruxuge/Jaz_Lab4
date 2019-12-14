@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+>
+
+<h:head>
+    <h:outputStylesheet name="style.css" library="css"/>
+</h:head>
+
+<h:body>
+    <h:body></h:body>
+    <div id="page">
+        <h:form>
+            <div style="left: 0; position: absolute; text-align: center; top: 5%; width: 100%;">
+                <f:validateRegex pattern="((?=.*[a-z])(?=.*[A-Z]).{2,50})">
+                    <h:inputText styleClass="textFieldInputs" pt:placeholder="Name" validatorMessage="Invalid name format"
+                                 value="#{registrationRequest.name}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <f:validateRegex pattern="((?=.*[a-z])(?=.*[A-Z]).{2,50})">
+                    <h:inputText styleClass="textFieldInputs" pt:placeholder="Last name" validatorMessage="Invalid lastname format"
+                                 value="#{registrationRequest.lastName}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <f:validateRegex pattern="((?=.*[a-z]).{3,30})">
+                    <h:inputText styleClass="textFieldInputs" pt:placeholder="Username" validatorMessage="Invalid username format"
+                                 value="#{registrationRequest.username}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <f:validateRegex
+                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,30})$">
+                    <h:inputText styleClass="textFieldInputs" pt:placeholder="E-mail" requiredMessage="Please enter your email address."
+                                 validatorMessage="Invalid email format" value="#{registrationRequest.userEmail}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30})">
+                    <h:inputSecret styleClass="textFieldInputs" pt:placeholder="Password" requiredMessage="Please enter your password." validatorMessage="Invalid password format"
+                                   value="#{registrationRequest.password}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,30})">
+                    <h:inputSecret styleClass="textFieldInputs" pt:placeholder="Re-password" validatorMessage="Password don't match!" value="#{registrationRequest.secPassword}"/>
+                </f:validateRegex>
+                <br/>
+                <br/>
+                <h:inputText styleClass="textFieldInputs" pt:placeholder="BirthDay" value="#{registrationRequest.dateOfBirth}"/>
+                <br/>
+                <br/>
+                <h:commandButton styleClass="loginButton" value="Registration" action="#{registerController.register}"/>
+            </div>
+        </h:form>
+    </div>
+
+</h:body>
+</html>

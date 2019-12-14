@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+>
+
+<h:head>
+    <h:outputStylesheet name="style.css" library="css"/>
+</h:head>
+
+<h:body>
+    <h:body>
+    </h:body>
+    <div id="page">
+        <div style="left: 0; position: absolute; text-align: center; top: 50%; width:100%;">
+            <h:form>
+                <h:inputText styleClass="textFieldInputs" pt:placeholder="Login" title="Login" value="#{loginRequest.username}"/>
+                <br/>
+                <br/>
+                <h:inputSecret styleClass="textFieldInputs" pt:placeholder="Password" value="#{loginRequest.password}"/>
+                <br/>
+                <br/>
+                <h:commandButton styleClass="loginButton" value="Login" action="#{loginController.validateUsernamePassword}"/>
+                <h:commandButton styleClass="loginButton" value="Register" action="#{loginController.register}"/>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+
+</html>
